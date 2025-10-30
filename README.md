@@ -145,8 +145,8 @@ Universidade Cidade de São Paulo
 ## 📚 Disciplina
 
 **Desenvolvimento Front-End para Web**  
-Professores: Angela Perez Barcellos e Vagner Da Silva
-Universidade Cidade de São Paulo
+Professores: Angela Perez Barcellos e Vagner Da Silva  
+Universidade Cidade de São Paulo  
 2025
 
 ## 📜 Licença
