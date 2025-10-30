@@ -104,7 +104,7 @@ projeto-ong/
 
 1. Clone o repositório:
 ```bash
-git clone [URL_DO_REPOSITORIO]
+git clone https://github.com/joaoolemoss/projeto-ong-esperanca
 ```
 
 2. Navegue até a pasta do projeto:
@@ -117,9 +117,9 @@ cd projeto-ong
 ## 📦 Próximas Etapas
 
 Este projeto será expandido nas próximas entregas com:
-- **Entrega II**: Estilização com CSS3 avançado
-- **Entrega III**: Interatividade com JavaScript
-- **Entrega IV**: Integração e melhorias finais
+- **Entrega II**: Estilização e Leiautes
+- **Entrega III**: Interatividade e Funcionalidades
+- **Entrega IV**: Versionamento, Acessibilidade e Deploy
 
 ## 🌐 Compatibilidade
 
@@ -145,9 +145,9 @@ Universidade Cidade de São Paulo
 ## 📚 Disciplina
 
 **Desenvolvimento Front-End para Web**  
-Professor: [Nome do Professor]  
-Universidade Cidade de São Paulo  
-2024
+Professores: Angela Perez Barcellos e Vagner Da Silva
+Universidade Cidade de São Paulo
+2025
 
 ## 📜 Licença
 
