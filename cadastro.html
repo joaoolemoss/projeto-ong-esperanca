@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cadastre-se como voluntário ou doador na ONG Esperança">
+    <meta name="keywords" content="cadastro, voluntário, doador, ONG, formulário">
+    <meta name="author" content="ONG Esperança">
+    <title>Cadastro - ONG Esperança</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="projetos.html">Projetos Sociais</a></li>
+                <li><a href="cadastro.html">Cadastre-se</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="introducao-cadastro">
+            <h1>Cadastre-se na ONG Esperança</h1>
+            <p>Faça parte desta rede de solidariedade e transformação social. Preencha o formulário abaixo para se cadastrar como voluntário, doador ou parceiro.</p>
+            <img src="imagens/cadastro-banner.jpg" alt="Pessoas preenchendo formulário de cadastro">
+        </section>
+
+        <section id="formulario-cadastro">
+            <h2>Formulário de Cadastro</h2>
+            
+            <form action="#" method="post" id="form-cadastro">
+                <fieldset>
+                    <legend>Dados Pessoais</legend>
+                    
+                    <label for="nome">Nome Completo: <abbr title="Campo obrigatório">*</abbr></label>
+                    <input type="text" id="nome" name="nome" required 
+                           placeholder="Digite seu nome completo" 
+                           minlength="3" 
+                           maxlength="100"
+                           pattern="[A-Za-zÀ-ÿ\s]+"
+                           title="Por favor, digite apenas letras e espaços">
+                    
+                    <label for="email">E-mail: <abbr title="Campo obrigatório">*</abbr></label>
+                    <input type="email" id="email" name="email" required 
+                           placeholder="seuemail@exemplo.com"
+                           maxlength="100"
+                           pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                           title="Digite um e-mail válido">
+                    
+                    <label for="cpf">CPF: <abbr title="Campo obrigatório">*</abbr></label>
+                    <input type="text" id="cpf" name="cpf" required 
+                           placeholder="000.000.000-00"
+                           pattern="\d{3}\.\d{3}\.\d{3}-\d{2}"
+                           maxlength="14"
+                           title="Digite o CPF no formato: 000.000.000-00">
+                    
+                    <label for="telefone">Telefone: <abbr title="Campo obrigatório">*</abbr></label>
+                    <input type="tel" id="telefone" name="telefone" required 
+                           placeholder="(11) 99999-9999"
+                           pattern="\(\d{2}\)\s\d{4,5}-\d{4}"
+                           maxlength="15"
+                           title="Digite o telefone no formato: (11) 99999-9999">
+                    
+                    <label for="data-nascimento">Data de Nascimento: <abbr title="Campo obrigatório">*</abbr></label>
+                    <input type="date" id="data-nascimento" name="data_nascimento" required
+                           min="1900-01-01"
+                           max="2008-12-31"
+                           title="Você deve ter pelo menos 16 anos">
+                    
+                    <label for="genero">Gênero:</label>
+                    <select id="genero" name="genero">
+                        <option value="">Prefiro não informar</option>
+                        <option value="masculino">Masculino</option>
+                        <option value="feminino">Feminino</option>
+                        <option value="outro">Outro</option>
+                    </select>
+                    
+                    <label for="rg">RG:</label>
+                    <input type="text" id="rg" name="rg" 
+                           placeholder="00.000.000-0"
+                           pattern="\d{2}\.\d{3}\.\d{3}-[0-9X]"
+                           maxlength="12"
+                           title="Digite o RG no formato: 00.000.000-0">
+                </fieldset>
+
+                <fieldset>
+                    <legend>Endereço</legend>
+                    
+                    <label for="cep">CEP: <abbr title="Campo obrigatório">*</abbr></label>
+                    <input type="text" id="cep" name="cep" required 
+                           placeholder="00000-000"
+                           pattern="\d{5}-\d{3}"
+                           maxlength="9"
+                           title="Digite o CEP no formato: 00000-000">
+                    
+                    <label for="endereco">Endereço: <abbr title="Campo obrigatório">*</abbr></label>
+                    <input type="text" id="endereco" name="endereco" required 
+                           placeholder="Rua, Avenida, etc."
+                           maxlength="200">
+                    
+                    <label for="numero">Número: <abbr title="Campo obrigatório">*</abbr></label>
+                    <input type="number" id="numero" name="numero" required 
+                           placeholder="123"
+                           min="1"
+                           max="99999">
+                    
+                    <label for="complemento">Complemento:</label>
+                    <input type="text" id="complemento" name="complemento" 
+                           placeholder="Apartamento, bloco, etc."
+                           maxlength="50">
+                    
+                    <label for="bairro">Bairro: <abbr title="Campo obrigatório">*</abbr></label>
+                    <input type="text" id="bairro" name="bairro" required 
+                           placeholder="Nome do bairro"
+                           maxlength="100">
+                    
+                    <label for="cidade">Cidade: <abbr title="Campo obrigatório">*</abbr></label>
+                    <input type="text" id="cidade" name="cidade" required 
+                           placeholder="Nome da cidade"
+                           maxlength="100">
+                    
+                    <label for="estado">Estado: <abbr title="Campo obrigatório">*</abbr></label>
+                    <select id="estado" name="estado" required>
+                        <option value="">Selecione o Estado</option>
+                        <option value="AC">Acre</option>
+                        <option value="AL">Alagoas</option>
+                        <option value="AP">Amapá</option>
+                        <option value="AM">Amazonas</option>
+                        <option value="BA">Bahia</option>
+                        <option value="CE">Ceará</option>
+                        <option value="DF">Distrito Federal</option>
+                        <option value="ES">Espírito Santo</option>
+                        <option value="GO">Goiás</option>
+                        <option value="MA">Maranhão</option>
+                        <option value="MT">Mato Grosso</option>
+                        <option value="MS">Mato Grosso do Sul</option>
+                        <option value="MG">Minas Gerais</option>
+                        <option value="PA">Pará</option>
+                        <option value="PB">Paraíba</option>
+                        <option value="PR">Paraná</option>
+                        <option value="PE">Pernambuco</option>
+                        <option value="PI">Piauí</option>
+                        <option value="RJ">Rio de Janeiro</option>
+                        <option value="RN">Rio Grande do Norte</option>
+                        <option value="RS">Rio Grande do Sul</option>
+                        <option value="RO">Rondônia</option>
+                        <option value="RR">Roraima</option>
+                        <option value="SC">Santa Catarina</option>
+                        <option value="SP">São Paulo</option>
+                        <option value="SE">Sergipe</option>
+                        <option value="TO">Tocantins</option>
+                    </select>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Tipo de Cadastro</legend>
+                    
+                    <label for="tipo-cadastro">Como deseja participar? <abbr title="Campo obrigatório">*</abbr></label>
+                    <select id="tipo-cadastro" name="tipo_cadastro" required>
+                        <option value="">Selecione uma opção</option>
+                        <option value="voluntario">Voluntário</option>
+                        <option value="doador">Doador</option>
+                        <option value="parceiro">Parceiro Empresarial</option>
+                        <option value="beneficiario">Beneficiário</option>
+                    </select>
+                    
+                    <label>Áreas de Interesse (marque todas que se aplicam):</label>
+                    <label for="educacao">
+                        <input type="checkbox" id="educacao" name="areas_interesse" value="educacao">
+                        Educação
+                    </label>
+                    
+                    <label for="saude">
+                        <input type="checkbox" id="saude" name="areas_interesse" value="saude">
+                        Saúde
+                    </label>
+                    
+                    <label for="alimentacao">
+                        <input type="checkbox" id="alimentacao" name="areas_interesse" value="alimentacao">
+                        Alimentação
+                    </label>
+                    
+                    <label for="capacitacao">
+                        <input type="checkbox" id="capacitacao" name="areas_interesse" value="capacitacao">
+                        Capacitação Profissional
+                    </label>
+                    
+                    <label for="cultura">
+                        <input type="checkbox" id="cultura" name="areas_interesse" value="cultura">
+                        Cultura e Arte
+                    </label>
+                    
+                    <label for="esporte">
+                        <input type="checkbox" id="esporte" name="areas_interesse" value="esporte">
+                        Esporte
+                    </label>
+                    
+                    <label for="meio-ambiente">
+                        <input type="checkbox" id="meio-ambiente" name="areas_interesse" value="meio_ambiente">
+                        Meio Ambiente
+                    </label>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Informações Complementares</legend>
+                    
+                    <label for="profissao">Profissão:</label>
+                    <input type="text" id="profissao" name="profissao" 
+                           placeholder="Sua profissão ou área de atuação"
+                           maxlength="100">
+                    
+                    <label for="escolaridade">Escolaridade:</label>
+                    <select id="escolaridade" name="escolaridade">
+                        <option value="">Selecione</option>
+                        <option value="fundamental-incompleto">Ensino Fundamental Incompleto</option>
+                        <option value="fundamental-completo">Ensino Fundamental Completo</option>
+                        <option value="medio-incompleto">Ensino Médio Incompleto</option>
+                        <option value="medio-completo">Ensino Médio Completo</option>
+                        <option value="superior-incompleto">Ensino Superior Incompleto</option>
+                        <option value="superior-completo">Ensino Superior Completo</option>
+                        <option value="pos-graduacao">Pós-Graduação</option>
+                    </select>
+                    
+                    <label for="disponibilidade">Disponibilidade (para voluntários):</label>
+                    <select id="disponibilidade" name="disponibilidade">
+                        <option value="">Selecione</option>
+                        <option value="manha">Manhãs</option>
+                        <option value="tarde">Tardes</option>
+                        <option value="noite">Noites</option>
+                        <option value="fds">Finais de Semana</option>
+                        <option value="flexivel">Horário Flexível</option>
+                    </select>
+                    
+                    <label for="horas-semana">Horas disponíveis por semana (para voluntários):</label>
+                    <input type="number" id="horas-semana" name="horas_semana" 
+                           min="1" 
+                           max="40" 
+                           step="1"
+                           placeholder="Ex: 4">
+                    
+                    <p>Tem experiência em trabalho voluntário?</p>
+                    <label for="experiencia-sim">
+                        <input type="radio" id="experiencia-sim" name="experiencia" value="sim">
+                        Sim
+                    </label>
+                    <label for="experiencia-nao">
+                        <input type="radio" id="experiencia-nao" name="experiencia" value="nao">
+                        Não
+                    </label>
+                    
+                    <label for="como-conheceu">Como conheceu a ONG Esperança?</label>
+                    <select id="como-conheceu" name="como_conheceu">
+                        <option value="">Selecione</option>
+                        <option value="internet">Internet/Redes Sociais</option>
+                        <option value="amigos">Amigos/Familiares</option>
+                        <option value="evento">Evento</option>
+                        <option value="midia">TV/Rádio/Jornal</option>
+                        <option value="outro">Outro</option>
+                    </select>
+                    
+                    <label for="observacoes">Observações ou Mensagem:</label>
+                    <textarea id="observacoes" name="observacoes" 
+                              rows="5" 
+                              cols="50"
+                              maxlength="500"
+                              placeholder="Conte-nos um pouco sobre você e por que deseja participar (máximo 500 caracteres)"></textarea>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Documentos e Autorizações</legend>
+                    
+                    <label for="foto">Foto (opcional):</label>
+                    <input type="file" id="foto" name="foto" 
+                           accept="image/*">
+                    
+                    <label for="curriculo">Currículo (opcional para voluntários):</label>
+                    <input type="file" id="curriculo" name="curriculo" 
+                           accept=".pdf,.doc,.docx">
+                    
+                    <label for="newsletter">
+                        <input type="checkbox" id="newsletter" name="newsletter" value="sim">
+                        Desejo receber novidades e atualizações da ONG por e-mail
+                    </label>
+                    
+                    <label for="autorizacao-imagem">
+                        <input type="checkbox" id="autorizacao-imagem" name="autorizacao_imagem" value="sim">
+                        Autorizo o uso de minha imagem em materiais de divulgação da ONG
+                    </label>
+                    
+                    <label for="termos">
+                        <input type="checkbox" id="termos" name="termos" required value="sim">
+                        Li e concordo com os <a href="#termos-uso">Termos de Uso</a> e a <a href="#politica-privacidade">Política de Privacidade</a> <abbr title="Campo obrigatório">*</abbr>
+                    </label>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Para Menores de 18 Anos</legend>
+                    <p>Se você tem menos de 18 anos, precisamos dos dados do responsável legal:</p>
+                    
+                    <label for="nome-responsavel">Nome do Responsável:</label>
+                    <input type="text" id="nome-responsavel" name="nome_responsavel" 
+                           placeholder="Nome completo do responsável"
+                           maxlength="100">
+                    
+                    <label for="cpf-responsavel">CPF do Responsável:</label>
+                    <input type="text" id="cpf-responsavel" name="cpf_responsavel" 
+                           placeholder="000.000.000-00"
+                           pattern="\d{3}\.\d{3}\.\d{3}-\d{2}"
+                           maxlength="14">
+                    
+                    <label for="telefone-responsavel">Telefone do Responsável:</label>
+                    <input type="tel" id="telefone-responsavel" name="telefone_responsavel" 
+                           placeholder="(11) 99999-9999"
+                           pattern="\(\d{2}\)\s\d{4,5}-\d{4}"
+                           maxlength="15">
+                    
+                    <label for="parentesco">Parentesco:</label>
+                    <select id="parentesco" name="parentesco">
+                        <option value="">Selecione</option>
+                        <option value="pai">Pai</option>
+                        <option value="mae">Mãe</option>
+                        <option value="avo">Avô/Avó</option>
+                        <option value="tutor">Tutor Legal</option>
+                        <option value="outro">Outro</option>
+                    </select>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Confirmação de Segurança</legend>
+                    
+                    <label for="captcha">Digite o código de segurança abaixo:</label>
+                    <img src="imagens/captcha.jpg" alt="Código de segurança CAPTCHA">
+                    <input type="text" id="captcha" name="captcha" required 
+                           placeholder="Digite o código acima"
+                           maxlength="6">
+                </fieldset>
+
+                <div>
+                    <button type="submit">Enviar Cadastro</button>
+                    <button type="reset">Limpar Formulário</button>
+                </div>
+            </form>
+        </section>
+
+        <section id="informacoes-adicionais">
+            <h2>Informações Importantes</h2>
+            
+            <article>
+                <h3>Após o Cadastro</h3>
+                <p>Depois de enviar seu cadastro, nossa equipe entrará em contato em até 48 horas úteis para:</p>
+                <ol>
+                    <li>Confirmar o recebimento de seus dados</li>
+                    <li>Agendar uma entrevista (para voluntários)</li>
+                    <li>Fornecer informações sobre doações (para doadores)</li>
+                    <li>Discutir oportunidades de parceria (para empresas)</li>
+                </ol>
+                <img src="imagens/processo-cadastro.jpg" alt="Fluxo do processo após cadastro">
+            </article>
+
+            <article id="termos-uso">
+                <h3>Termos de Uso</h3>
+                <p>Ao se cadastrar na ONG Esperança, você concorda com os seguintes termos:</p>
+                <ul>
+                    <li>Fornecer informações verdadeiras e atualizadas</li>
+                    <li>Respeitar os valores e missão da instituição</li>
+                    <li>Cumprir com os compromissos assumidos</li>
+                    <li>Tratar todos com respeito e dignidade</li>
+                    <li>Seguir as orientações da coordenação</li>
+                </ul>
+                <img src="imagens/termos.jpg" alt="Documento de termos de uso">
+            </article>
+
+            <article id="politica-privacidade">
+                <h3>Política de Privacidade</h3>
+                <p>Seus dados pessoais são tratados com total segurança e confidencialidade:</p>
+                <ul>
+                    <li>Utilizamos seus dados apenas para fins institucionais</li>
+                    <li>Não compartilhamos informações com terceiros sem autorização</li>
+                    <li>Você pode solicitar a exclusão de seus dados a qualquer momento</li>
+                    <li>Seguimos a Lei Geral de Proteção de Dados (LGPD)</li>
+                    <li>Mantemos sistemas de segurança para proteger suas informações</li>
+                </ul>
+                <img src="imagens/privacidade.jpg" alt="Ícone de proteção de dados">
+            </article>
+
+            <article>
+                <h3>Dúvidas Frequentes sobre Cadastro</h3>
+                
+                <h4>Posso me cadastrar em mais de uma categoria?</h4>
+                <p>Sim! Você pode ser voluntário e doador ao mesmo tempo. Basta indicar suas preferências no formulário.</p>
+                
+                <h4>Há algum custo para se cadastrar?</h4>
+                <p>Não. O cadastro é totalmente gratuito para todas as categorias.</p>
+                
+                <h4>Menores de 16 anos podem se cadastrar?</h4>
+                <p>Menores de 16 anos podem participar de algumas atividades específicas, sempre com autorização e acompanhamento dos responsáveis.</p>
+                
+                <h4>Como altero meus dados cadastrais?</h4>
+                <p>Entre em contato conosco através do e-mail cadastro@ongesperanca.org.br ou pelo telefone (11) 3333-4444.</p>
+                
+                <h4>Meus dados estão seguros?</h4>
+                <p>Sim. Utilizamos criptografia e seguimos todas as normas da LGPD para proteger suas informações.</p>
+                
+                <img src="imagens/faq.jpg" alt="Perguntas frequentes">
+            </article>
+        </section>
+
+        <section id="outras-formas-cadastro">
+            <h2>Outras Formas de Cadastro</h2>
+            
+            <article>
+                <h3>Cadastro Presencial</h3>
+                <p>Você também pode realizar seu cadastro pessoalmente em nossa sede:</p>
+                <address>
+                    <p><strong>Endereço:</strong> Rua da Esperança, 1000 - Centro, São Paulo - SP</p>
+                    <p><strong>Horário:</strong> Segunda a Sexta, das 8h às 18h | Sábados, das 9h às 13h</p>
+                    <p><strong>Documentos necessários:</strong> RG, CPF e comprovante de residência</p>
+                </address>
+                <img src="imagens/cadastro-presencial.jpg" alt="Atendimento presencial na sede">
+            </article>
+
+            <article>
+                <h3>Cadastro por Telefone</h3>
+                <p>Ligue para nossa central e faça seu cadastro com um de nossos atendentes:</p>
+                <p><strong>Telefone:</strong> <a href="tel:+551133334444">(11) 3333-4444</a></p>
+                <p><strong>WhatsApp:</strong> <a href="tel:+5511999998888">(11) 99999-8888</a></p>
+                <p><strong>Horário de Atendimento:</strong> Segunda a Sexta, das 8h às 20h</p>
+                <img src="imagens/cadastro-telefone.jpg" alt="Atendente realizando cadastro por telefone">
+            </article>
+
+            <article>
+                <h3>Cadastro em Eventos</h3>
+                <p>Participe de nossos eventos e faça seu cadastro no local:</p>
+                <ul>
+                    <li>Feiras de Voluntariado</li>
+                    <li>Eventos Beneficentes</li>
+                    <li>Campanhas em Shoppings e Praças</li>
+                    <li>Palestras e Workshops</li>
+                </ul>
+                <img src="imagens/cadastro-evento.jpg" alt="Stand de cadastro em evento">
+            </article>
+        </section>
+    </main>
+
+    <aside>
+        <h2>Precisa de Ajuda?</h2>
+        
+        <article>
+            <h3>Suporte ao Cadastro</h3>
+            <p>Nossa equipe está pronta para ajudar você:</p>
+            <ul>
+                <li>E-mail: <a href="mailto:cadastro@ongesperanca.org.br">cadastro@ongesperanca.org.br</a></li>
+                <li>Telefone: <a href="tel:+551133334444">(11) 3333-4444</a></li>
+                <li>WhatsApp: <a href="tel:+5511999998888">(11) 99999-8888</a></li>
+            </ul>
+        </article>
+
+        <article>
+            <h3>Downloads Úteis</h3>
+            <ul>
+                <li><a href="#">Guia do Voluntário (PDF)</a></li>
+                <li><a href="#">Manual do Doador (PDF)</a></li>
+                <li><a href="#">Termo de Adesão ao Voluntariado</a></li>
+                <li><a href="#">Formulário de Cadastro Offline</a></li>
+            </ul>
+        </article>
+
+        <article>
+            <h3>Estatísticas de Cadastros</h3>
+            <dl>
+                <dt>Voluntários Ativos</dt>
+                <dd>523 pessoas</dd>
+                
+                <dt>Doadores Regulares</dt>
+                <dd>1.247 pessoas</dd>
+                
+                <dt>Empresas Parceiras</dt>
+                <dd>87 organizações</dd>
+                
+                <dt>Novos Cadastros (Mês)</dt>
+                <dd>142 pessoas</dd>
+            </dl>
+        </article>
+    </aside>
+
+    <footer>
+        <p>&copy; 2024 ONG Esperança - Todos os direitos reservados</p>
+        <p>CNPJ: 12.345.678/0001-90 | Organização sem fins lucrativos</p>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="projetos.html">Projetos</a></li>
+                <li><a href="#formulario-cadastro">Formulário</a></li>
+                <li><a href="#termos-uso">Termos</a></li>
+                <li><a href="#politica-privacidade">Privacidade</a></li>
+            </ul>
+        </nav>
+    </footer>
+</body>
+</html>
