@@ -260,5 +260,34 @@
             </ul>
         </nav>
     </footer>
+
+    <!-- JavaScript Files -->
+    <script src="js/main.js"></script>
+    <script src="js/advanced-features.js"></script>
+    <script>
+        // Inicializar funcionalidades específicas da home
+        document.addEventListener('DOMContentLoaded', function() {
+            // Carregar depoimentos
+            if (typeof AppData !== 'undefined' && AppData.testimonials) {
+                const testimonialsSection = document.querySelector('.testimonials');
+                if (testimonialsSection && !testimonialsSection.querySelector('.testimonial-card')) {
+                    const container = document.createElement('div');
+                    container.className = 'testimonials-grid';
+                    AppData.testimonials.forEach(testimonial => {
+                        container.innerHTML += Templates.testimonial(testimonial);
+                    });
+                    testimonialsSection.appendChild(container);
+                }
+            }
+            
+            // Carregar timeline
+            if (typeof AppData !== 'undefined' && AppData.timeline) {
+                const timelineSection = document.querySelector('#nossa-historia');
+                if (timelineSection && !timelineSection.querySelector('.timeline')) {
+                    timelineSection.innerHTML += Templates.timeline(AppData.timeline);
+                }
+            }
+        });
+    </script>
 </body>
 </html>

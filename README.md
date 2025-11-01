@@ -116,8 +116,8 @@ git clone https://github.com/joaoolemoss/projeto-ong-esperanca
 
 ## 📦 Próximas Etapas
 
-- **Entrega III**: Interatividade e Funcionalidades
-- **Entrega IV**: Versionamento, Acessibilidade e Deploy
+- **Entrega III**: JavaScript para interatividade
+- **Entrega IV**: Integração final e melhorias
 
 ## 🌐 Compatibilidade
 
@@ -129,15 +129,15 @@ git clone https://github.com/joaoolemoss/projeto-ong-esperanca
 
 ## 👨‍💻 Autor
 
-**João Lemos**  
-Estudante de Ciência da Computação  
+**João Lemos**
+Estudante de Ciência da Computação
 Universidade Cidade de São Paulo
 
 ## 📚 Disciplina
 
-**Desenvolvimento Front-End para Web**  
-Professores: Angela Perez Barcellos e Vagner Da Silva  
-Universidade Cidade de São Paulo  
+**Desenvolvimento Front-End para Web**
+Professores: Angela Perez Barcellos e Vagner Da Silva
+Universidade Cidade de São Paulo
 2025
 
 ## 📜 Licença

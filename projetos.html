@@ -31,7 +31,16 @@
         <section id="projetos-ativos">
             <h2>Projetos em Andamento</h2>
             
-            <article>
+            <!-- Container de filtros será adicionado dinamicamente pelo JavaScript -->
+            
+            <!-- Grid de projetos dinâmicos -->
+            <div id="dynamic-projects" class="cards-grid">
+                <!-- Projetos serão carregados dinamicamente aqui -->
+            </div>
+            
+            <!-- Projetos originais como fallback -->
+            <div class="projects-original" style="display: none;">
+                <article data-category="educacao">
                 <h3>Projeto Educar para Transformar</h3>
                 <img src="imagens/projeto-educacao.jpg" alt="Crianças em sala de aula do projeto educacional">
                 <h4>Descrição</h4>
@@ -622,5 +631,42 @@
             </ul>
         </nav>
     </footer>
+
+    <!-- JavaScript Files -->
+    <script src="js/main.js"></script>
+    <script src="js/advanced-features.js"></script>
+    <script>
+        // Inicializar funcionalidades avançadas específicas da página
+        document.addEventListener('DOMContentLoaded', function() {
+            // Carregar projetos dinamicamente
+            if (typeof AppData !== 'undefined' && AppData.projects) {
+                const container = document.getElementById('dynamic-projects');
+                if (container) {
+                    // Carregar projetos iniciais
+                    AppData.projects.slice(0, 6).forEach(project => {
+                        const cardHTML = Templates.projectCard(project);
+                        const div = document.createElement('div');
+                        div.innerHTML = cardHTML;
+                        container.appendChild(div.firstElementChild);
+                    });
+                }
+                
+                // Inicializar sistema de filtros
+                if (typeof FilterSystem !== 'undefined') {
+                    FilterSystem.init();
+                }
+                
+                // Inicializar carregamento dinâmico
+                if (typeof DynamicLoader !== 'undefined') {
+                    DynamicLoader.setupInfiniteScroll();
+                }
+            }
+            
+            // Inicializar sistema de doações
+            if (typeof DonationSystem !== 'undefined') {
+                DonationSystem.init();
+            }
+        });
+    </script>
 </body>
 </html>
