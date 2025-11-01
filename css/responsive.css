@@ -1,0 +1,681 @@
+/* ====================================
+   RESPONSIVIDADE AVANÇADA
+   ONG ESPERANÇA
+   Sistema de 5 Breakpoints
+   ==================================== */
+
+/* ==================================== 
+   BREAKPOINTS DEFINIDOS
+   - XS: < 576px (Mobile Portrait)
+   - SM: 576px - 767px (Mobile Landscape)
+   - MD: 768px - 991px (Tablet)
+   - LG: 992px - 1199px (Desktop)
+   - XL: >= 1200px (Desktop Large)
+   ==================================== */
+
+/* ==================================== 
+   EXTRA SMALL: < 576px (Mobile Portrait)
+   ==================================== */
+@media (max-width: 575px) {
+    /* Container */
+    .container {
+        padding: 0 var(--spacing-xs);
+    }
+    
+    /* Typography */
+    h1 {
+        font-size: var(--font-3xl);
+        line-height: 1.2;
+    }
+    
+    h2 {
+        font-size: var(--font-2xl);
+    }
+    
+    h3 {
+        font-size: var(--font-xl);
+    }
+    
+    /* Navigation */
+    header {
+        position: fixed;
+        width: 100%;
+    }
+    
+    nav {
+        padding: var(--spacing-xs) 0;
+    }
+    
+    nav ul {
+        position: fixed;
+        top: 60px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 60px);
+        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: var(--spacing-lg) var(--spacing-md);
+        transition: left 0.3s ease;
+        overflow-y: auto;
+    }
+    
+    nav ul.active {
+        left: 0;
+    }
+    
+    nav li {
+        width: 100%;
+        margin: var(--spacing-sm) 0;
+    }
+    
+    nav a {
+        display: block;
+        padding: var(--spacing-sm) var(--spacing-md);
+        text-align: center;
+        font-size: var(--font-lg);
+    }
+    
+    .menu-toggle {
+        display: block;
+    }
+    
+    /* Main Content */
+    main {
+        padding: var(--spacing-md);
+        margin-top: 80px;
+        border-radius: var(--border-radius-md);
+    }
+    
+    /* Grid System */
+    .grid {
+        gap: var(--spacing-sm);
+    }
+    
+    .grid-cols-2,
+    .grid-cols-3,
+    .grid-cols-4,
+    .grid-cols-6,
+    .grid-cols-12 {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Cards */
+    .cards-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+    
+    .card {
+        margin-bottom: var(--spacing-md);
+    }
+    
+    .card-image {
+        height: 150px;
+    }
+    
+    /* Forms */
+    form {
+        padding: 0;
+    }
+    
+    fieldset {
+        padding: var(--spacing-sm);
+        margin-bottom: var(--spacing-md);
+    }
+    
+    legend {
+        font-size: var(--font-base);
+        padding: var(--spacing-xs) var(--spacing-sm);
+    }
+    
+    input,
+    select,
+    textarea {
+        font-size: 16px; /* Prevents zoom on iOS */
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Buttons */
+    .btn {
+        width: 100%;
+        margin-bottom: var(--spacing-xs);
+    }
+    
+    button[type="submit"],
+    button[type="reset"] {
+        width: 100%;
+        margin-bottom: var(--spacing-sm);
+    }
+    
+    /* Aside */
+    aside {
+        margin-top: var(--spacing-lg);
+        position: static;
+    }
+    
+    /* Tables */
+    table {
+        font-size: var(--font-xs);
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+    
+    /* Footer */
+    footer {
+        padding: var(--spacing-md) var(--spacing-xs);
+    }
+    
+    footer nav ul {
+        flex-direction: column;
+        position: static;
+        padding: var(--spacing-sm);
+    }
+    
+    /* Utilities */
+    .xs-hidden {
+        display: none !important;
+    }
+    
+    .xs-text-center {
+        text-align: center !important;
+    }
+    
+    .xs-w-full {
+        width: 100% !important;
+    }
+}
+
+/* ==================================== 
+   SMALL: 576px - 767px (Mobile Landscape)
+   ==================================== */
+@media (min-width: 576px) and (max-width: 767px) {
+    /* Container */
+    .container {
+        max-width: 540px;
+        padding: 0 var(--spacing-sm);
+    }
+    
+    /* Typography */
+    h1 {
+        font-size: var(--font-4xl);
+    }
+    
+    /* Grid System */
+    .grid-cols-2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .sm-grid-cols-1 {
+        grid-template-columns: 1fr;
+    }
+    
+    .sm-grid-cols-2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* Navigation */
+    nav ul {
+        gap: var(--spacing-md);
+    }
+    
+    /* Cards */
+    .cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-sm);
+    }
+    
+    /* Main */
+    main {
+        padding: var(--spacing-lg);
+    }
+    
+    /* Forms */
+    .form-row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* Utilities */
+    .sm-hidden {
+        display: none !important;
+    }
+    
+    .sm-block {
+        display: block !important;
+    }
+    
+    .sm-grid {
+        display: grid !important;
+    }
+}
+
+/* ==================================== 
+   MEDIUM: 768px - 991px (Tablet)
+   ==================================== */
+@media (min-width: 768px) and (max-width: 991px) {
+    /* Container */
+    .container {
+        max-width: 720px;
+    }
+    
+    /* Typography */
+    h1 {
+        font-size: var(--font-4xl);
+    }
+    
+    h2 {
+        font-size: calc(var(--font-2xl) + 0.25rem);
+    }
+    
+    /* Navigation */
+    .menu-toggle {
+        display: none;
+    }
+    
+    nav ul {
+        display: flex !important;
+        position: static;
+        flex-direction: row;
+        height: auto;
+        background: none;
+    }
+    
+    /* Grid System */
+    .md-grid-cols-2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .md-grid-cols-3 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .md-grid-cols-4 {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    /* Layout */
+    .content-wrapper {
+        grid-template-columns: 2fr 1fr;
+        gap: var(--spacing-md);
+    }
+    
+    /* Cards */
+    .cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* Aside */
+    aside {
+        position: sticky;
+        top: 80px;
+    }
+    
+    /* Main */
+    main {
+        margin-top: var(--spacing-lg);
+        padding: var(--spacing-xl);
+    }
+    
+    /* Forms */
+    .form-row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* Buttons */
+    .btn {
+        width: auto;
+    }
+    
+    /* Utilities */
+    .md-hidden {
+        display: none !important;
+    }
+    
+    .md-block {
+        display: block !important;
+    }
+    
+    .md-flex {
+        display: flex !important;
+    }
+}
+
+/* ==================================== 
+   LARGE: 992px - 1199px (Desktop)
+   ==================================== */
+@media (min-width: 992px) and (max-width: 1199px) {
+    /* Container */
+    .container {
+        max-width: 960px;
+    }
+    
+    /* Grid System */
+    .lg-grid-cols-3 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .lg-grid-cols-4 {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .lg-grid-cols-6 {
+        grid-template-columns: repeat(6, 1fr);
+    }
+    
+    /* Layout */
+    .content-wrapper {
+        grid-template-columns: 1fr 300px;
+    }
+    
+    /* Cards */
+    .cards-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    /* Projects Grid */
+    #projetos-ativos {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-lg);
+    }
+    
+    /* Forms */
+    form {
+        max-width: 900px;
+    }
+    
+    .form-row {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    /* Utilities */
+    .lg-hidden {
+        display: none !important;
+    }
+    
+    .lg-block {
+        display: block !important;
+    }
+}
+
+/* ==================================== 
+   EXTRA LARGE: >= 1200px (Desktop Large)
+   ==================================== */
+@media (min-width: 1200px) {
+    /* Container */
+    .container {
+        max-width: 1140px;
+    }
+    
+    /* Typography */
+    h1 {
+        font-size: var(--font-5xl);
+    }
+    
+    /* Grid System */
+    .xl-grid-cols-4 {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .xl-grid-cols-6 {
+        grid-template-columns: repeat(6, 1fr);
+    }
+    
+    .xl-grid-cols-12 {
+        grid-template-columns: repeat(12, 1fr);
+    }
+    
+    /* Layout */
+    main {
+        padding: var(--spacing-2xl);
+    }
+    
+    /* Cards */
+    .cards-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    /* Gallery */
+    .gallery {
+        grid-template-columns: repeat(5, 1fr);
+    }
+    
+    /* Team Grid */
+    #equipe .grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    /* Utilities */
+    .xl-hidden {
+        display: none !important;
+    }
+    
+    .xl-block {
+        display: block !important;
+    }
+}
+
+/* ==================================== 
+   EXTRA EXTRA LARGE: >= 1400px
+   ==================================== */
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1320px;
+    }
+    
+    /* Even larger typography for big screens */
+    h1 {
+        font-size: calc(var(--font-5xl) + 0.5rem);
+    }
+    
+    /* More columns for ultra-wide */
+    .xxl-grid-cols-5 {
+        grid-template-columns: repeat(5, 1fr);
+    }
+    
+    .xxl-grid-cols-6 {
+        grid-template-columns: repeat(6, 1fr);
+    }
+}
+
+/* ==================================== 
+   LANDSCAPE ORIENTATION
+   ==================================== */
+@media (orientation: landscape) and (max-height: 600px) {
+    /* Reduce vertical spacing in landscape mobile */
+    header {
+        padding: var(--spacing-xs) 0;
+    }
+    
+    main {
+        margin-top: var(--spacing-md);
+        margin-bottom: var(--spacing-md);
+    }
+    
+    section {
+        margin-bottom: var(--spacing-lg);
+    }
+    
+    h1 {
+        margin-bottom: var(--spacing-md);
+    }
+}
+
+/* ==================================== 
+   HIGH DPI SCREENS
+   ==================================== */
+@media (-webkit-min-device-pixel-ratio: 2),
+       (min-resolution: 192dpi) {
+    /* Sharper borders and shadows for retina displays */
+    * {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    
+    .card {
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    }
+    
+    input,
+    select,
+    textarea {
+        border-width: 1px;
+    }
+}
+
+/* ==================================== 
+   TOUCH DEVICES
+   ==================================== */
+@media (hover: none) and (pointer: coarse) {
+    /* Larger touch targets for mobile */
+    .btn,
+    input,
+    select,
+    textarea {
+        min-height: 44px;
+    }
+    
+    nav a {
+        padding: var(--spacing-sm) var(--spacing-md);
+    }
+    
+    /* Remove hover effects on touch devices */
+    .card:hover {
+        transform: none;
+    }
+    
+    /* Ensure dropdowns work on touch */
+    .dropdown:hover .dropdown-content {
+        display: none;
+    }
+    
+    .dropdown.active .dropdown-content {
+        display: block;
+    }
+}
+
+/* ==================================== 
+   FOLDABLE DEVICES
+   ==================================== */
+@media (max-width: 280px) {
+    /* Galaxy Fold and similar */
+    .container {
+        padding: 0 var(--spacing-xs);
+    }
+    
+    h1 {
+        font-size: var(--font-2xl);
+    }
+    
+    h2 {
+        font-size: var(--font-xl);
+    }
+    
+    .btn {
+        padding: var(--spacing-xs);
+        font-size: var(--font-sm);
+    }
+}
+
+/* ==================================== 
+   PRINT RESPONSIVE
+   ==================================== */
+@media print {
+    /* A4 size optimization */
+    @page {
+        size: A4;
+        margin: 1cm;
+    }
+    
+    body {
+        font-size: 12pt;
+    }
+    
+    .container {
+        max-width: 100%;
+        padding: 0;
+    }
+    
+    /* Break pages appropriately */
+    section {
+        page-break-inside: avoid;
+    }
+    
+    h1, h2, h3 {
+        page-break-after: avoid;
+    }
+}
+
+/* ==================================== 
+   ACCESSIBILITY RESPONSIVE
+   ==================================== */
+
+/* Large Text Mode */
+@media (min-width: 768px) {
+    .large-text {
+        font-size: 120%;
+    }
+}
+
+/* High Contrast Mode Responsive */
+@media (prefers-contrast: high) and (max-width: 768px) {
+    .btn {
+        border: 2px solid currentColor;
+    }
+}
+
+/* Reduced Motion for Mobile */
+@media (prefers-reduced-motion: reduce) and (max-width: 768px) {
+    nav ul {
+        transition: none;
+    }
+}
+
+/* ==================================== 
+   HELPER CLASSES BY BREAKPOINT
+   ==================================== */
+
+/* Display utilities for each breakpoint */
+@media (max-width: 575px) {
+    .xs-none { display: none !important; }
+    .xs-block { display: block !important; }
+    .xs-inline-block { display: inline-block !important; }
+    .xs-flex { display: flex !important; }
+    .xs-grid { display: grid !important; }
+}
+
+@media (min-width: 576px) {
+    .sm-none { display: none !important; }
+    .sm-block { display: block !important; }
+    .sm-inline-block { display: inline-block !important; }
+    .sm-flex { display: flex !important; }
+    .sm-grid { display: grid !important; }
+}
+
+@media (min-width: 768px) {
+    .md-none { display: none !important; }
+    .md-block { display: block !important; }
+    .md-inline-block { display: inline-block !important; }
+    .md-flex { display: flex !important; }
+    .md-grid { display: grid !important; }
+}
+
+@media (min-width: 992px) {
+    .lg-none { display: none !important; }
+    .lg-block { display: block !important; }
+    .lg-inline-block { display: inline-block !important; }
+    .lg-flex { display: flex !important; }
+    .lg-grid { display: grid !important; }
+}
+
+@media (min-width: 1200px) {
+    .xl-none { display: none !important; }
+    .xl-block { display: block !important; }
+    .xl-inline-block { display: inline-block !important; }
+    .xl-flex { display: flex !important; }
+    .xl-grid { display: grid !important; }
+}

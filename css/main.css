@@ -1,0 +1,453 @@
+/* ====================================
+   ARQUIVO PRINCIPAL DE ESTILOS
+   ONG Esperança - main.css
+   ==================================== */
+
+/* ==== IMPORTAÇÃO DOS ARQUIVOS CSS ==== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap');
+@import url('variables.css');
+@import url('base.css');
+@import url('layout.css');
+@import url('components.css');
+@import url('navigation.css');
+@import url('animations.css');
+@import url('responsive.css');
+
+/* ==== ESTILOS ESPECÍFICOS DA PÁGINA INDEX ==== */
+#hero {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.9), rgba(72, 187, 120, 0.9)), url('../imagens/banner-principal.jpg') center/cover;
+    color: white;
+    text-align: center;
+    padding: var(--space-5xl) 0;
+    position: relative;
+    overflow: hidden;
+}
+
+#hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('../imagens/pattern.svg');
+    opacity: 0.1;
+    animation: float 20s ease-in-out infinite;
+}
+
+#hero h1 {
+    color: white;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    margin-bottom: var(--space-lg);
+    animation: fadeInUp 0.8s ease-out;
+}
+
+#hero p {
+    font-size: var(--font-xl);
+    max-width: 600px;
+    margin: 0 auto var(--space-xl);
+    animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+/* Seção Sobre */
+#sobre article {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+    margin-bottom: var(--space-3xl);
+    align-items: center;
+}
+
+@media (min-width: 768px) {
+    #sobre article:nth-child(even) {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    #sobre article:nth-child(odd) {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    #sobre article:nth-child(even) img {
+        order: -1;
+    }
+}
+
+#sobre h3 {
+    color: var(--color-primary);
+    margin-bottom: var(--space-md);
+}
+
+#sobre ul {
+    list-style: none;
+    margin-left: 0;
+}
+
+#sobre ul li {
+    position: relative;
+    padding-left: var(--space-xl);
+    margin-bottom: var(--space-md);
+}
+
+#sobre ul li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--color-secondary);
+    font-weight: bold;
+    font-size: var(--font-xl);
+}
+
+/* Seção Equipe */
+#equipe figure {
+    text-align: center;
+    transition: transform var(--transition-normal);
+}
+
+#equipe figure:hover {
+    transform: translateY(-5px);
+}
+
+#equipe figure img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto;
+    border: 4px solid var(--color-primary);
+}
+
+#equipe figcaption h4 {
+    color: var(--color-primary);
+    margin-top: var(--space-md);
+}
+
+/* Seção Impacto */
+#impacto dl {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-lg);
+}
+
+#impacto dt {
+    color: var(--color-primary);
+    font-size: var(--font-lg);
+    margin-bottom: var(--space-xs);
+}
+
+#impacto dd {
+    margin-left: 0;
+    font-size: var(--font-2xl);
+    font-weight: var(--font-bold);
+    color: var(--color-gray-900);
+}
+
+/* ==== ESTILOS ESPECÍFICOS DA PÁGINA PROJETOS ==== */
+#projetos-ativos article {
+    background: white;
+    border-radius: var(--border-radius-lg);
+    padding: var(--space-xl);
+    margin-bottom: var(--space-2xl);
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-normal);
+}
+
+#projetos-ativos article:hover {
+    box-shadow: var(--shadow-xl);
+    transform: translateY(-2px);
+}
+
+#projetos-ativos h3 {
+    color: var(--color-primary);
+    border-bottom: 2px solid var(--color-primary);
+    padding-bottom: var(--space-md);
+    margin-bottom: var(--space-lg);
+}
+
+#projetos-ativos h4 {
+    color: var(--color-secondary);
+    margin-top: var(--space-lg);
+}
+
+#projetos-ativos ul {
+    background: var(--bg-tertiary);
+    padding: var(--space-md);
+    border-radius: var(--border-radius-md);
+}
+
+/* Seção Voluntariado */
+#voluntariado {
+    background: linear-gradient(135deg, var(--bg-tertiary) 0%, var(--bg-secondary) 100%);
+}
+
+#voluntariado blockquote {
+    background: white;
+    padding: var(--space-xl);
+    border-radius: var(--border-radius-lg);
+    border-left: 4px solid var(--color-primary);
+    box-shadow: var(--shadow-sm);
+    margin: var(--space-xl) 0;
+}
+
+#voluntariado cite {
+    color: var(--color-primary);
+    font-weight: var(--font-semibold);
+}
+
+/* Seção Como Doar */
+#doar {
+    background: white;
+}
+
+#doar h4 {
+    color: var(--color-secondary);
+    border-bottom: 2px solid var(--color-gray-200);
+    padding-bottom: var(--space-sm);
+    margin-bottom: var(--space-md);
+}
+
+#doar h5 {
+    color: var(--color-primary);
+    margin-top: var(--space-lg);
+}
+
+#doar dl {
+    background: var(--bg-tertiary);
+    padding: var(--space-lg);
+    border-radius: var(--border-radius-md);
+}
+
+#doar table {
+    background: white;
+    box-shadow: var(--shadow-sm);
+    border-radius: var(--border-radius-md);
+    overflow: hidden;
+}
+
+#doar table th {
+    background: var(--color-primary);
+    color: white;
+}
+
+#doar table tr:nth-child(even) {
+    background: var(--bg-tertiary);
+}
+
+/* ==== ESTILOS ESPECÍFICOS DO FORMULÁRIO DE CADASTRO ==== */
+#formulario-cadastro {
+    background: white;
+    border-radius: var(--border-radius-lg);
+    padding: var(--space-2xl);
+    box-shadow: var(--shadow-lg);
+}
+
+#formulario-cadastro fieldset {
+    background: white;
+    border: 2px solid var(--color-gray-200);
+    border-radius: var(--border-radius-md);
+    margin-bottom: var(--space-xl);
+    padding: var(--space-xl);
+}
+
+#formulario-cadastro legend {
+    background: var(--color-primary);
+    color: white;
+    padding: var(--space-sm) var(--space-lg);
+    border-radius: var(--border-radius-full);
+}
+
+#formulario-cadastro .form-group {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+}
+
+@media (min-width: 768px) {
+    #formulario-cadastro .form-group.two-columns {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+#formulario-cadastro button[type="submit"] {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    color: white;
+    font-size: var(--font-lg);
+    font-weight: var(--font-semibold);
+    padding: var(--space-md) var(--space-2xl);
+    border: none;
+    border-radius: var(--border-radius-full);
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    margin-right: var(--space-md);
+}
+
+#formulario-cadastro button[type="submit"]:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+#formulario-cadastro button[type="reset"] {
+    background: var(--color-gray-500);
+    color: white;
+    font-size: var(--font-lg);
+    padding: var(--space-md) var(--space-2xl);
+    border: none;
+    border-radius: var(--border-radius-full);
+    cursor: pointer;
+    transition: all var(--transition-normal);
+}
+
+#formulario-cadastro button[type="reset"]:hover {
+    background: var(--color-gray-600);
+}
+
+/* ==== FOOTER ==== */
+footer {
+    background: linear-gradient(135deg, var(--color-gray-900) 0%, var(--color-gray-800) 100%);
+    color: var(--color-gray-300);
+    padding: var(--space-3xl) 0 var(--space-xl);
+    margin-top: var(--space-3xl);
+}
+
+footer .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-2xl);
+}
+
+footer h3 {
+    color: white;
+    margin-bottom: var(--space-lg);
+}
+
+footer ul {
+    list-style: none;
+    margin-left: 0;
+}
+
+footer ul li {
+    margin-bottom: var(--space-sm);
+}
+
+footer a {
+    color: var(--color-gray-300);
+    text-decoration: none;
+    transition: all var(--transition-fast);
+}
+
+footer a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    border-top: 1px solid var(--color-gray-700);
+    margin-top: var(--space-2xl);
+    padding-top: var(--space-xl);
+    text-align: center;
+}
+
+/* ==== ASIDE ==== */
+aside {
+    background: white;
+    border-radius: var(--border-radius-lg);
+    padding: var(--space-xl);
+    box-shadow: var(--shadow-md);
+}
+
+aside h2 {
+    color: var(--color-primary);
+    font-size: var(--font-xl);
+    margin-bottom: var(--space-lg);
+}
+
+aside article {
+    background: var(--bg-tertiary);
+    padding: var(--space-lg);
+    border-radius: var(--border-radius-md);
+    margin-bottom: var(--space-lg);
+}
+
+aside article h3 {
+    color: var(--color-secondary);
+    font-size: var(--font-lg);
+    margin-bottom: var(--space-md);
+}
+
+/* ==== UTILIDADES ADICIONAIS ==== */
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-primary {
+    color: var(--color-primary);
+}
+
+.text-secondary {
+    color: var(--color-secondary);
+}
+
+.bg-primary-gradient {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+}
+
+.bg-secondary-gradient {
+    background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-secondary-dark) 100%);
+}
+
+.shadow-hover {
+    transition: all var(--transition-normal);
+}
+
+.shadow-hover:hover {
+    box-shadow: var(--shadow-xl);
+    transform: translateY(-4px);
+}
+
+/* ==== ANIMAÇÕES ==== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+/* ==== PRINT STYLES ==== */
+@media print {
+    header, 
+    footer, 
+    aside, 
+    .no-print,
+    .mobile-menu-toggle,
+    .mobile-nav {
+        display: none !important;
+    }
+    
+    main {
+        width: 100%;
+    }
+    
+    a[href]::after {
+        content: " (" attr(href) ")";
+    }
+}

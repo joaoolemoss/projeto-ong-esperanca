@@ -1,0 +1,645 @@
+/* ====================================
+   ANIMAÇÕES E EFEITOS
+   ONG ESPERANÇA
+   ==================================== */
+
+/* ==================================== 
+   MENU HAMBÚRGUER ANIMADO
+   ==================================== */
+.menu-toggle {
+    width: 30px;
+    height: 25px;
+    position: relative;
+    transform: rotate(0deg);
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background: white;
+    border-radius: 9px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: 0.25s ease-in-out;
+}
+
+.menu-toggle span:nth-child(1) {
+    top: 0px;
+}
+
+.menu-toggle span:nth-child(2),
+.menu-toggle span:nth-child(3) {
+    top: 10px;
+}
+
+.menu-toggle span:nth-child(4) {
+    top: 20px;
+}
+
+.menu-toggle.open span:nth-child(1) {
+    top: 10px;
+    width: 0%;
+    left: 50%;
+}
+
+.menu-toggle.open span:nth-child(2) {
+    transform: rotate(45deg);
+}
+
+.menu-toggle.open span:nth-child(3) {
+    transform: rotate(-45deg);
+}
+
+.menu-toggle.open span:nth-child(4) {
+    top: 10px;
+    width: 0%;
+    left: 50%;
+}
+
+/* ==================================== 
+   LOADING ANIMATIONS
+   ==================================== */
+
+/* Pulse Loader */
+.pulse-loader {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-color: var(--primary-color);
+    border-radius: 100%;
+    animation: pulse-scale 1.0s infinite ease-in-out;
+}
+
+@keyframes pulse-scale {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1.0);
+        opacity: 0;
+    }
+}
+
+/* Dots Loader */
+.dots-loader {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+
+.dots-loader div {
+    position: absolute;
+    top: 33px;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+
+.dots-loader div:nth-child(1) {
+    left: 8px;
+    animation: dots1 0.6s infinite;
+}
+
+.dots-loader div:nth-child(2) {
+    left: 8px;
+    animation: dots2 0.6s infinite;
+}
+
+.dots-loader div:nth-child(3) {
+    left: 32px;
+    animation: dots2 0.6s infinite;
+}
+
+.dots-loader div:nth-child(4) {
+    left: 56px;
+    animation: dots3 0.6s infinite;
+}
+
+@keyframes dots1 {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes dots3 {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0);
+    }
+}
+
+@keyframes dots2 {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(24px, 0);
+    }
+}
+
+/* ==================================== 
+   SCROLL ANIMATIONS
+   ==================================== */
+
+/* Fade In on Scroll */
+.fade-in-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease-out;
+}
+
+.fade-in-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Slide In from Left */
+.slide-in-left {
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: all 0.6s ease-out;
+}
+
+.slide-in-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Slide In from Right */
+.slide-in-right {
+    opacity: 0;
+    transform: translateX(100px);
+    transition: all 0.6s ease-out;
+}
+
+.slide-in-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Scale In */
+.scale-in {
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 0.6s ease-out;
+}
+
+.scale-in.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* ==================================== 
+   HOVER EFFECTS
+   ==================================== */
+
+/* Image Overlay */
+.image-overlay {
+    position: relative;
+    overflow: hidden;
+}
+
+.image-overlay::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    opacity: 0;
+    transition: opacity var(--transition-base);
+}
+
+.image-overlay:hover::before {
+    opacity: 0.8;
+}
+
+.image-overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    opacity: 0;
+    transition: opacity var(--transition-base);
+}
+
+.image-overlay:hover .image-overlay-text {
+    opacity: 1;
+}
+
+/* Button Hover Effects */
+.btn-hover-slide::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transition: left 0.3s ease;
+}
+
+.btn-hover-slide:hover::before {
+    left: 100%;
+}
+
+/* Card Flip Effect */
+.card-flip {
+    perspective: 1000px;
+}
+
+.card-flip-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.card-flip:hover .card-flip-inner {
+    transform: rotateY(180deg);
+}
+
+.card-flip-front,
+.card-flip-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.card-flip-back {
+    transform: rotateY(180deg);
+}
+
+/* ==================================== 
+   PARALLAX EFFECTS
+   ==================================== */
+
+.parallax {
+    position: relative;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 500px;
+}
+
+.parallax-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+}
+
+/* ==================================== 
+   TEXT EFFECTS
+   ==================================== */
+
+/* Typing Effect */
+.typing-effect {
+    overflow: hidden;
+    border-right: 3px solid var(--primary-color);
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: 0.15em;
+    animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink-caret {
+    from,
+    to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: var(--primary-color);
+    }
+}
+
+/* Glitch Effect */
+.glitch {
+    position: relative;
+}
+
+.glitch::before,
+.glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.glitch::before {
+    animation: glitch-1 0.5s infinite;
+    color: var(--primary-color);
+    z-index: -1;
+}
+
+.glitch::after {
+    animation: glitch-2 0.5s infinite;
+    color: var(--secondary-color);
+    z-index: -2;
+}
+
+@keyframes glitch-1 {
+    0% {
+        clip: rect(44px, 450px, 56px, 0);
+    }
+    5% {
+        clip: rect(12px, 450px, 59px, 0);
+    }
+    10% {
+        clip: rect(22px, 450px, 30px, 0);
+    }
+    /* Continue pattern... */
+}
+
+@keyframes glitch-2 {
+    0% {
+        clip: rect(65px, 450px, 119px, 0);
+    }
+    5% {
+        clip: rect(79px, 450px, 86px, 0);
+    }
+    10% {
+        clip: rect(20px, 450px, 94px, 0);
+    }
+    /* Continue pattern... */
+}
+
+/* ==================================== 
+   BACKGROUND ANIMATIONS
+   ==================================== */
+
+/* Moving Gradient */
+.bg-gradient-move {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient-move 15s ease infinite;
+}
+
+@keyframes gradient-move {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Particle Background */
+.particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.particle {
+    position: absolute;
+    display: block;
+    pointer-events: none;
+    animation: particle-float 15s infinite;
+}
+
+.particle::before {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+@keyframes particle-float {
+    0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+/* ==================================== 
+   NOTIFICATION ANIMATIONS
+   ==================================== */
+
+/* Bounce In */
+.notification-bounce {
+    animation: bounceIn 0.6s;
+}
+
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.3) translateY(100%);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+    70% {
+        transform: scale(0.9) translateY(0);
+    }
+    100% {
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* Shake */
+.shake {
+    animation: shake 0.5s;
+}
+
+@keyframes shake {
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+        transform: translateX(-10px);
+    }
+    20%,
+    40%,
+    60%,
+    80% {
+        transform: translateX(10px);
+    }
+}
+
+/* ==================================== 
+   PROGRESS ANIMATIONS
+   ==================================== */
+
+/* Circular Progress */
+.circular-progress {
+    position: relative;
+    width: 100px;
+    height: 100px;
+}
+
+.circular-progress svg {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg);
+}
+
+.circular-progress circle {
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke-width: 10;
+    stroke: var(--gray-200);
+    transform: translate(5px, 5px);
+}
+
+.circular-progress circle:nth-child(2) {
+    stroke: var(--primary-color);
+    stroke-dasharray: 440;
+    stroke-dashoffset: 440;
+    animation: circular-progress 2s linear forwards;
+}
+
+@keyframes circular-progress {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+/* ==================================== 
+   SPECIAL EFFECTS
+   ==================================== */
+
+/* Neon Glow */
+.neon-glow {
+    color: var(--primary-color);
+    text-shadow:
+        0 0 7px var(--primary-color),
+        0 0 10px var(--primary-color),
+        0 0 21px var(--primary-color),
+        0 0 42px var(--primary-color),
+        0 0 82px var(--primary-color),
+        0 0 92px var(--primary-color),
+        0 0 102px var(--primary-color),
+        0 0 151px var(--primary-color);
+    animation: neon-flicker 1.5s infinite alternate;
+}
+
+@keyframes neon-flicker {
+    0%,
+    100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.8;
+    }
+}
+
+/* 3D Text */
+.text-3d {
+    text-shadow:
+        1px 1px 0 var(--gray-300),
+        2px 2px 0 var(--gray-400),
+        3px 3px 0 var(--gray-500),
+        4px 4px 0 var(--gray-600),
+        5px 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* ==================================== 
+   MORPHING SHAPES
+   ==================================== */
+
+.morph {
+    animation: morph 8s ease-in-out infinite;
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+}
+
+@keyframes morph {
+    0% {
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    }
+    50% {
+        border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+    }
+    100% {
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    }
+}
+
+/* ==================================== 
+   COUNTER ANIMATIONS
+   ==================================== */
+
+.counter {
+    display: inline-block;
+    font-size: var(--font-3xl);
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.counter.counting {
+    animation: counter-scale 0.3s ease-in-out;
+}
+
+@keyframes counter-scale {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
