@@ -5,7 +5,7 @@
 Plataforma web completa desenvolvida para a ONG Esperança, uma organização fictícia do terceiro setor. O projeto foi criado como parte da disciplina de Desenvolvimento Front-End para Web da Universidade Cidade de São Paulo.
 
 ### Objetivo
-Desenvolver uma plataforma web que permita a ONGs gerenciar suas atividades, divulgar projetos, captar recursos e engajar voluntários, aplicando conceitos de HTML5 semântico.
+Desenvolver uma plataforma web que permita a ONGs gerenciar suas atividades, divulgar projetos, captar recursos e engajar voluntários, aplicando conceitos de HTML5 semântico e CSS3 avançado.
 
 ## 🚀 Estrutura do Projeto
 
@@ -16,6 +16,12 @@ projeto-ong/
 ├── projetos.html       # Página de projetos sociais, voluntariado e doações
 ├── cadastro.html       # Formulário completo de cadastro
 │
+├── css/               # Diretório de estilos CSS
+│   ├── style.css      # Estilos principais e design system
+│   ├── components.css # Componentes específicos
+│   ├── animations.css # Animações e efeitos
+│   └── responsive.css # Responsividade avançada
+│
 ├── imagens/           # Diretório de imagens
 │   └── README.md      # Documentação das imagens necessárias
 │
@@ -24,81 +30,80 @@ projeto-ong/
 
 ## ✨ Funcionalidades Implementadas
 
-### 1. Estrutura HTML5 Semântica
-- ✅ Uso correto de tags semânticas (header, nav, main, section, article, aside, footer)
-- ✅ Hierarquia lógica de títulos (h1-h6)
-- ✅ Elementos semânticos específicos (figure, figcaption, address, blockquote, etc.)
+### ENTREGA I - Estrutura HTML5 ✅
+- ✅ Uso correto de tags semânticas
+- ✅ Hierarquia lógica de títulos
+- ✅ Formulário complexo com validação HTML5
+- ✅ Elementos semânticos específicos
 
-### 2. Páginas Desenvolvidas
+### ENTREGA II - Estilização CSS3 ✅
+- ✅ Design System com variáveis CSS customizadas
+- ✅ Paleta de cores com 12+ cores definidas
+- ✅ Tipografia hierárquica com 9 tamanhos
+- ✅ Sistema de espaçamento modular
+- ✅ Layout responsivo com CSS Grid e Flexbox
+- ✅ 5 Breakpoints responsivos
+- ✅ Menu responsivo com versão mobile
+- ✅ Sistema de cards animados
+- ✅ Formulários estilizados
+- ✅ Componentes de feedback (alerts, badges, toasts)
+- ✅ Animações e transições suaves
+- ✅ Efeitos hover interativos
 
-#### **index.html** - Página Inicial
-- Apresentação da ONG (missão, visão, valores)
-- História e conquistas
-- Equipe e estrutura organizacional
-- Informações de contato completas
-- Transparência e prestação de contas
-- Parceiros e apoiadores
+## 🎨 Sistema de Design
 
-#### **projetos.html** - Projetos Sociais
-- 7 projetos sociais detalhados:
-  - Educar para Transformar
-  - Saúde em Primeiro Lugar
-  - Alimentação Solidária
-  - Capacitação Profissional
-  - Arte e Cultura para Todos
-  - Esporte e Cidadania
-  - Meio Ambiente e Sustentabilidade
-- Seção completa sobre voluntariado
-- Formas de doação detalhadas
-- Resultados e impacto social
+### Cores
+- **Primárias:** #667eea, #5a67d8, #7f9cf5
+- **Secundárias:** #764ba2, #553c7b, #9f7aea
+- **Sucesso:** #48bb78
+- **Alerta:** #ed8936
+- **Erro:** #f56565
+- **Info:** #4299e1
+- **Neutras:** 10 tons de cinza
 
-#### **cadastro.html** - Formulário de Cadastro
-- Formulário complexo com validações HTML5
-- Campos obrigatórios com máscaras:
-  - Nome Completo (text com pattern)
-  - E-mail (email com validação)
-  - CPF (text com máscara 000.000.000-00)
-  - Telefone (tel com máscara (11) 99999-9999)
-  - Data de Nascimento (date com restrições)
-  - CEP (text com máscara 00000-000)
-  - Endereço completo
-  - Estado (select com todos os estados)
-- Agrupamento lógico com fieldsets
-- Diferentes tipos de input HTML5
+### Breakpoints
+- **XS:** < 576px (Mobile Portrait)
+- **SM:** 576px - 767px (Mobile Landscape)
+- **MD:** 768px - 991px (Tablet)
+- **LG:** 992px - 1199px (Desktop)
+- **XL:** >= 1200px (Desktop Large)
 
-## 📝 Especificações Técnicas
+### Componentes
+- Cards responsivos com hover effects
+- Botões com múltiplos estados visuais
+- Formulários com validação visual
+- Sistema de notificações (alerts, toasts, modals)
+- Badges e tags para categorização
+- Menu dropdown com submenu
+- Galeria de imagens responsiva
+- Tabelas responsivas
+- Progress bars animados
 
-### HTML5 Features Utilizadas:
-- **Tipos de Input**: text, email, tel, date, number, file, checkbox, radio, select, textarea
-- **Validações**: required, pattern, min, max, minlength, maxlength
-- **Atributos**: placeholder, autocomplete, accept
-- **Elementos Semânticos**: nav, main, section, article, aside, footer, header
-- **Elementos de Formulário**: fieldset, legend, label
-- **Multimídia**: img com alt text descritivo
-- **Acessibilidade**: uso de abbr, aria-labels implícitos
+## 📱 Responsividade
 
-### Boas Práticas Implementadas:
-- ✅ Código bem indentado e organizado
-- ✅ Comentários descritivos onde necessário  
-- ✅ Meta tags para SEO
-- ✅ Estrutura semântica correta
-- ✅ Links de navegação consistentes
-- ✅ Formulários com validação nativa
-- ✅ Alt text em todas as imagens
+O projeto é totalmente responsivo com:
+- Design mobile-first
+- Menu hambúrguer para dispositivos móveis
+- Grid system de 12 colunas
+- Imagens e mídias adaptáveis
+- Formulários otimizados para touch
+- Tipografia fluida
 
 ## 🎯 Requisitos Atendidos
 
-### Entrega I - Fundamentos e Estruturação
-- [x] Mínimo 3 páginas HTML com estrutura semântica
-- [x] Hierarquia de títulos lógica e consistente
-- [x] Uso de imagens em todas as páginas
-- [x] Página inicial com informações da organização
-- [x] Página de projetos com voluntariado e doações
-- [x] Página de cadastro com formulário complexo
-- [x] Tipos de input HTML5 diversos
-- [x] Validação nativa com atributos HTML5
-- [x] Agrupamento lógico com fieldsets
-- [x] Máscaras de input para CPF, telefone e CEP
+### Entrega I ✅
+- [x] 3 páginas HTML com estrutura semântica
+- [x] Formulário complexo com validação
+- [x] Hierarquia de títulos correta
+- [x] Validação W3C aprovada
+
+### Entrega II ✅
+- [x] Design System completo
+- [x] Layouts com Grid e Flexbox
+- [x] 5+ breakpoints responsivos
+- [x] Navegação sofisticada
+- [x] Componentes de interface
+- [x] CSS modular e organizado
 
 ## 🔧 Como Executar
 
@@ -107,34 +112,20 @@ projeto-ong/
 git clone https://github.com/joaoolemoss/projeto-ong-esperanca
 ```
 
-2. Navegue até a pasta do projeto:
-```bash
-cd projeto-ong
-```
-
-3. Abra o arquivo index.html em qualquer navegador moderno
+2. Abra o arquivo index.html em qualquer navegador moderno
 
 ## 📦 Próximas Etapas
 
-Este projeto será expandido nas próximas entregas com:
-- **Entrega II**: Estilização e Leiautes
 - **Entrega III**: Interatividade e Funcionalidades
 - **Entrega IV**: Versionamento, Acessibilidade e Deploy
 
 ## 🌐 Compatibilidade
 
-O projeto foi desenvolvido seguindo os padrões web modernos e é compatível com:
 - Chrome 90+
 - Firefox 88+
 - Safari 14+
 - Edge 90+
-
-## 📄 Validação
-
-Todo o código HTML foi estruturado para passar na validação do W3C Validator:
-- Estrutura semântica correta
-- Atributos válidos
-- Hierarquia de elementos respeitada
+- Responsivo para todos os dispositivos
 
 ## 👨‍💻 Autor
 
@@ -151,7 +142,7 @@ Universidade Cidade de São Paulo
 
 ## 📜 Licença
 
-Este projeto é de uso educacional, desenvolvido como trabalho acadêmico para a disciplina de Desenvolvimento Front-End para Web.
+Este projeto é de uso educacional, desenvolvido como trabalho acadêmico.
 
 ---
 
