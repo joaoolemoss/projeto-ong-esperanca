@@ -1,0 +1,466 @@
+/**
+ * ACCESSIBILITY.CSS
+ * Implementação WCAG 2.1 Nível AA
+ * Navegação por teclado, Modo Escuro, Alto Contraste e suporte a leitores de tela
+ */
+
+/* ===== SKIP TO CONTENT (Acessibilidade de Navegação) ===== */
+.skip-to-content {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #000;
+    color: #fff;
+    padding: 8px 16px;
+    text-decoration: none;
+    z-index: 10000;
+    border-radius: 0 0 4px 0;
+    font-weight: bold;
+}
+
+.skip-to-content:focus {
+    top: 0;
+    outline: 3px solid #667eea;
+    outline-offset: 2px;
+}
+
+/* ===== FOCO VISÍVEL PARA NAVEGAÇÃO POR TECLADO ===== */
+*:focus {
+    outline: 3px solid #667eea;
+    outline-offset: 2px;
+    transition: outline 0.2s ease;
+}
+
+/* Foco personalizado para botões */
+button:focus,
+.btn:focus,
+a.button:focus {
+    outline: 3px solid #667eea;
+    outline-offset: 3px;
+    box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.2);
+}
+
+/* Foco personalizado para inputs */
+input:focus,
+textarea:focus,
+select:focus {
+    outline: 3px solid #667eea;
+    outline-offset: 2px;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+/* Foco personalizado para links */
+a:focus {
+    outline: 3px solid #667eea;
+    outline-offset: 2px;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+}
+
+/* ===== CONTRASTE MÍNIMO 4.5:1 (WCAG AA) ===== */
+:root {
+    /* Cores com contraste AA */
+    --text-primary: #1a202c;
+    --text-secondary: #2d3748;
+    --background-primary: #ffffff;
+    --background-secondary: #f7fafc;
+    --link-color: #2c5282;
+    --link-hover: #1a365d;
+    --border-color: #cbd5e0;
+}
+
+/* Garantindo contraste adequado em textos */
+body {
+    color: var(--text-primary);
+    background-color: var(--background-primary);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--text-primary);
+}
+
+p, li, span {
+    color: var(--text-secondary);
+}
+
+a {
+    color: var(--link-color);
+}
+
+a:hover {
+    color: var(--link-hover);
+}
+
+/* ===== MODO ESCURO (Dark Mode) ===== */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --text-primary: #f7fafc;
+        --text-secondary: #e2e8f0;
+        --background-primary: #1a202c;
+        --background-secondary: #2d3748;
+        --link-color: #90cdf4;
+        --link-hover: #63b3ed;
+        --border-color: #4a5568;
+    }
+
+    body {
+        background-color: var(--background-primary);
+        color: var(--text-primary);
+    }
+
+    header {
+        background-color: #2d3748;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    nav {
+        background-color: #2d3748;
+    }
+
+    .card {
+        background-color: #2d3748;
+        border-color: var(--border-color);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    }
+
+    input,
+    textarea,
+    select {
+        background-color: #2d3748;
+        color: var(--text-primary);
+        border-color: var(--border-color);
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+        color: #718096;
+    }
+
+    button,
+    .btn {
+        background-color: #4a5568;
+        color: var(--text-primary);
+    }
+
+    button:hover,
+    .btn:hover {
+        background-color: #2d3748;
+    }
+}
+
+/* ===== MODO DE ALTO CONTRASTE ===== */
+.high-contrast {
+    --text-primary: #000000;
+    --text-secondary: #000000;
+    --background-primary: #ffffff;
+    --background-secondary: #ffffff;
+    --link-color: #0000ee;
+    --link-hover: #0000aa;
+    --border-color: #000000;
+}
+
+.high-contrast body {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.high-contrast header {
+    background-color: #000000;
+    color: #ffffff;
+    border: 3px solid #000000;
+}
+
+.high-contrast nav a {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.high-contrast nav a:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.high-contrast .card {
+    border: 3px solid #000000;
+    background-color: #ffffff;
+}
+
+.high-contrast button,
+.high-contrast .btn {
+    background-color: #000000;
+    color: #ffffff;
+    border: 3px solid #000000;
+}
+
+.high-contrast button:hover,
+.high-contrast .btn:hover {
+    background-color: #ffffff;
+    color: #000000;
+    border: 3px solid #000000;
+}
+
+.high-contrast input,
+.high-contrast textarea,
+.high-contrast select {
+    border: 2px solid #000000;
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* ===== SUPORTE PARA LEITORES DE TELA ===== */
+/* Classe para esconder visualmente mas manter acessível */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* Classe para mostrar apenas para leitores de tela quando focado */
+.sr-only-focusable:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+}
+
+/* ===== NAVEGAÇÃO POR TECLADO APRIMORADA ===== */
+/* Estados de foco para navegação sequencial */
+nav a:focus,
+nav button:focus {
+    position: relative;
+    z-index: 100;
+    background-color: rgba(102, 126, 234, 0.1);
+}
+
+/* Indicador visual para elementos interativos */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+    outline: 3px solid #667eea;
+    outline-offset: 2px;
+}
+
+/* ===== MELHORIAS DE LEGIBILIDADE ===== */
+/* Espaçamento de linha adequado */
+p, li {
+    line-height: 1.6;
+    letter-spacing: 0.01em;
+}
+
+/* Tamanho mínimo de texto para legibilidade */
+body {
+    font-size: 16px;
+}
+
+/* Largura máxima de linha para legibilidade (45-75 caracteres) */
+p, li {
+    max-width: 70ch;
+}
+
+/* ===== INDICADORES DE ESTADO ===== */
+/* Estados visuais claros para elementos desabilitados */
+button:disabled,
+input:disabled,
+textarea:disabled,
+select:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    border: 2px dashed var(--border-color);
+}
+
+/* Estados de erro com contraste adequado */
+.error,
+.input-error {
+    border-color: #c53030;
+    background-color: #fff5f5;
+}
+
+.error-message {
+    color: #c53030;
+    font-weight: 600;
+    margin-top: 4px;
+}
+
+/* Estados de sucesso */
+.success,
+.input-success {
+    border-color: #38a169;
+    background-color: #f0fff4;
+}
+
+.success-message {
+    color: #38a169;
+    font-weight: 600;
+    margin-top: 4px;
+}
+
+/* ===== ALTERNADOR DE MODO (Controles de Acessibilidade) ===== */
+.accessibility-controls {
+    position: fixed;
+    top: 60px;
+    right: 20px;
+    background: #ffffff;
+    border: 2px solid #cbd5e0;
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 9999;
+    display: none;
+}
+
+.accessibility-controls.active {
+    display: block;
+}
+
+.accessibility-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #667eea;
+    color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+    z-index: 10000;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.accessibility-toggle:hover {
+    transform: scale(1.1);
+    background-color: #5a67d8;
+}
+
+.accessibility-toggle:focus {
+    outline: 3px solid #667eea;
+    outline-offset: 3px;
+}
+
+.accessibility-controls h3 {
+    margin: 0 0 12px 0;
+    font-size: 16px;
+    color: var(--text-primary);
+}
+
+.accessibility-controls button {
+    display: block;
+    width: 100%;
+    margin: 8px 0;
+    padding: 10px;
+    background: #667eea;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+}
+
+.accessibility-controls button:hover {
+    background-color: #5a67d8;
+}
+
+/* ===== MODO DE ANIMAÇÃO REDUZIDA ===== */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* ===== MELHORIAS PARA TOUCH TARGETS ===== */
+/* Área mínima de toque de 44x44px (WCAG 2.1 AA) */
+button,
+a,
+input[type="checkbox"],
+input[type="radio"],
+select {
+    min-height: 44px;
+    min-width: 44px;
+}
+
+/* Espaçamento adequado entre elementos interativos */
+button + button,
+a + a {
+    margin-left: 8px;
+}
+
+/* ===== INDICADORES DE CARGA E PROGRESSO ACESSÍVEIS ===== */
+.loading {
+    position: relative;
+}
+
+.loading::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(102, 126, 234, 0.3);
+    border-top-color: #667eea;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* ===== RESPONSIVIDADE PARA ACESSIBILIDADE ===== */
+@media (max-width: 768px) {
+    .accessibility-controls {
+        top: auto;
+        bottom: 20px;
+        right: 20px;
+        max-width: 280px;
+    }
+
+    .accessibility-toggle {
+        top: auto;
+        bottom: 80px;
+    }
+}
+
+/* ===== PRINT STYLES ACESSÍVEIS ===== */
+@media print {
+    .skip-to-content,
+    .accessibility-toggle,
+    .accessibility-controls {
+        display: none !important;
+    }
+
+    body {
+        color: #000000;
+        background: #ffffff;
+    }
+
+    a {
+        color: #000000;
+        text-decoration: underline;
+    }
+
+    a[href^="http"]::after {
+        content: " (" attr(href) ")";
+    }
+}

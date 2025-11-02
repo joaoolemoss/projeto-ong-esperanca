@@ -1,0 +1,39 @@
+{
+  "name": "projeto-ong-esperanca",
+  "version": "1.0.0",
+  "description": "Plataforma web para ONG Esperança - Projeto Final Front-End",
+  "main": "index.html",
+  "scripts": {
+    "build": "node build/optimize.js",
+    "minify-css": "node build/minify-css.js",
+    "minify-js": "node build/minify-js.js",
+    "minify-html": "node build/minify-html.js",
+    "optimize-images": "node build/optimize-images.js",
+    "build:prod": "npm run minify-css && npm run minify-js && npm run minify-html && npm run optimize-images"
+  },
+  "keywords": [
+    "ong",
+    "frontend",
+    "html5",
+    "css3",
+    "javascript",
+    "accessibility",
+    "wcag"
+  ],
+  "author": "João Lemos",
+  "license": "MIT",
+  "devDependencies": {
+    "clean-css": "^5.3.2",
+    "html-minifier": "^4.0.0",
+    "terser": "^5.19.2",
+    "sharp": "^0.32.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/joaoolemoss/projeto-ong-esperanca"
+  },
+  "bugs": {
+    "url": "https://github.com/joaoolemoss/projeto-ong-esperanca/issues"
+  },
+  "homepage": "https://github.com/joaoolemoss/projeto-ong-esperanca#readme"
+}
